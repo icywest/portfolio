@@ -1,0 +1,49 @@
+---
+import { startFibonacci } from "../scripts/fibonacci-three.js";
+import "../styles/global.css";
+---
+
+<section id="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: Visual -->
+    <div class="hero-visual">
+      <canvas id="fib" aria-hidden="true"></canvas>
+    </div>
+
+    <!-- RIGHT: Intro -->
+    <div class="hero-content">
+      <h1>
+        Hello, World! </br><span class="accent">It's <span class="muted" style = "color: #ffaab8ff"> Cynthia</span> here<span class="cursor">.</span>
+      </h1>
+
+      <p class="hero-desc" style="margin:0 0 14px; padding:12px;">
+    I'm a Software Engineer, born leader, and a passionate learner.
+      </p>
+
+      <div class = "buttons">
+        <a href="#about" class="btn">About Me</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { startFibonacci } from "../scripts/fibonacci-three.js";
+
+  const init = () => {
+    const canvas = document.getElementById("fib");
+    if (canvas) startFibonacci(canvas, {
+      dotSize: 0.085,
+      count: 1800,
+      flowerPetals: 7,
+      starSpikes: 5,
+      morphSeconds: 1.8,
+      holdSeconds: 2.4
+    });
+  };
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>

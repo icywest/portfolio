@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = [
+  { name: "Money Tracker", desc: "Receipt upload + categorization (placeholder)", href: "#" },
+  { name: "Event Scheduler DSL", desc: "Rules-driven scheduling experiments (placeholder)", href: "#" },
+  { name: "HR-ERM", desc: "Enterprise HR system concept (placeholder)", href: "#" },
+];
+---
+<BaseLayout title="Projects | icywest.dev" description="Projects route test">
+  <Navbar />
+
+  <main>
+    <section class="container">
+      <div class="card">
+        <h1 style="margin:0 0 10px;">Projects</h1>
+        <div style="display:grid;gap:12px;">
+          {projects.map((p) => (
+            <a href={p.href} class="card" style="display:block;">
+              <div style="font-weight:800;">{p.name}</div>
+              <div class="muted" style="margin-top:6px;">{p.desc}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
