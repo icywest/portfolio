@@ -1,10 +1,13 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const links = [
-  { href: "/about", label: "About" },
-  { href: "/experience", label: "Experience" },
-  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About", icon: "lucide:user" },
+  { href: "/experience", label: "Experience", icon: "lucide:briefcase" },
+  { href: "/projects", label: "Projects", icon: "lucide:folder" },
 ];
 ---
+
 
 <header style="border-bottom:1px solid rgba(127,127,127,.25);">
   <div
@@ -36,39 +39,31 @@ const links = [
     <!-- RIGHT: actions -->
     <div style="display:flex;align-items:center;gap:14px;">
       <a
-        href="https://linkedin.com/in/yourprofile"
+        href="https://linkedin.com/in/icywest"
         target="_blank"
         aria-label="LinkedIn"
+        style="display:flex;align-items:center;"
       >
-        LinkedIn
+        <Icon name="lucide:linkedin" size="18" />
       </a>
 
-       <a
-        href="https://linkedin.com/in/yourprofile"
+      <a
+        href="https://github.com/icywest"
         target="_blank"
         aria-label="GitHub"
+        style="display:flex;align-items:center;"
       >
-        Github
+        <Icon name="lucide:github" size="18" />
       </a>
 
       <a
-        href="mailto:youremail@example.com"
+        href="mailto:icynwest@gmail.com"
         aria-label="Email"
+        style="display:flex;align-items:center;"
       >
-        @
+        <Icon name="lucide:mail" size="18" />
       </a>
 
-      <a
-        href="/contact"
-        style="
-          padding:6px 12px;
-          border:1px solid rgba(127,127,127,.4);
-          border-radius:6px;
-          font-weight:600;
-        "
-      >
-        Message
-      </a>
     </div>
   </div>
 </header>
