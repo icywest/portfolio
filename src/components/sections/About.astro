@@ -1,18 +1,59 @@
 ---
+const tech = [
+  "Python",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Node.js / Express",
+  "SQL Server",
+  "Power BI",
+  "TensorFlow",
+];
 
+const imgSrc = "src/assets/images/icylogo.svg"; // put your photo in public/images/
 ---
 
-<section id="about" class="section">
+<section id="about" class="about section">
   <div class="container">
-    <div class="about-card">
-      <h2 style="font-weight:900; font-family: monospace;">/about me</h2>
+    <div class="about-head">
+      <h2 class="about-title" style="font-family: 'Roboto Mono', monospace;">
+        <span class="slash">/</span> about me
+      </h2>
+      <div class="about-rule" aria-hidden="true"></div>
+    </div>
 
-      <p style="font-size:18px; padding:12px;">
-        Software Engineer graduate at Keiser University, with a strong focus on building reliable applications,
-        learning fast, and shipping features that solve real problems. 
-      </p>
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="about-p">
+          I’m a <em>Software Engineering</em> graduate based in <strong>Managua, Nicaragua</strong>,
+          currently focused on building practical systems that combine software development,
+          cloud infrastructure, and data-driven decisions.
+        </p>
+        <p class="about-p muted">
+          I care about clean architecture, documentation, and building software that actually gets used. Also, I had worked as a guest speaker and event planner for tech communities.
+        </p>
+        <div class="about-tech">
+          <p class="about-tech-label muted">Here are some technologies I’ve been working with:</p>
 
+          <ul class="tech-list" role="list">
+            {tech.map((t) => (
+              <li class="tech-item">
+                <span class="tech-caret" aria-hidden="true">▸</span>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div style = "margin-top: 2rem; font-size: 0.9rem; font-family: 'Roboto Mono', monospace;" class = "buttons">
+          <a href="#leadership" class="btn">! check out some events I've organized</a>
+        </div>
+      </div>
+
+      <aside class="about-right">
+        <div class="photo-card">
+          <img src={imgSrc} alt="Portrait of Cynthia Nicolás West" loading="lazy" />
+        </div>
+      </aside>
     </div>
   </div>
 </section>
-

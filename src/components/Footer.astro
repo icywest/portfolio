@@ -1,6 +1,21 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer style="border-top:1px solid rgba(127,127,127,.25);">
-<p style="text-align:center;">{year}</p>
+<footer
+  style="
+    border-top: 1px solid rgba(127,127,127,.25);
+    margin-top: 48px;
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255,255,255,.7);
+    background: rgba(14, 9, 41, 0.6);
+    backdrop-filter: blur(6px);
+  "
+>
+  <p style="margin:0;">
+    designed and developed by
+    <span style="font-weight:600;">Cynthia</span>
+    — {year}
+  </p>
 </footer>

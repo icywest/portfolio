@@ -1,0 +1,116 @@
+---
+const roles = [
+  {
+    key: "program-leader",
+    title: "Program Leader – Software Engineering & MIS",
+    org: "Keiser University",
+    period: "Jan 2025 – Apr 2025",
+    bullets: [
+      "Coordinated and executed academic, technological, and community-focused events, including workshops, talks, and extracurricular activities.",
+      "Provided direct academic guidance and mentorship to students, supporting their learning paths and professional development.",
+      "Promoted collaborative work, student leadership, and active participation within the university community.",
+      "Represented the Software Engineering & MIS program in internal initiatives and institutional events."
+    ],
+    skills: ["Leadership", "Project Coordination", "Academic Mentorship"]
+  },
+  {
+    key: "peer-tutor",
+    title: "Peer Tutor",
+    org: "Keiser University",
+    period: "Jan 2024 – Apr 2025",
+    bullets: [
+      "Supported fellow students through peer-to-peer education, assisting with coursework, problem-solving, and exam preparation.",
+      "Adapted explanations to different learning styles to improve understanding of technical and academic concepts.",
+      "Encouraged independent learning and confidence in academic performance."
+    ],
+    skills: ["Peer Education", "Communication", "Mentoring"]
+  },
+  {
+    key: "tech-support",
+    title: "Technical Support Agent – Microsoft Entra ID & Outlook",
+    org: "Concentrix",
+    period: "Jun 2024 – Aug 2024",
+    bullets: [
+      "Provided technical support for Microsoft Entra ID, managing user access, identity synchronization, and domain-related issues.",
+      "Configured and troubleshot Active Directory and DNS environments affecting authentication services.",
+      "Resolved Outlook email connectivity issues involving IMAP, SMTP, and POP3 protocols."
+    ],
+    skills: ["Microsoft Entra ID", "Active Directory", "Technical Support"]
+  },
+  {
+    key: "academic-assistant",
+    title: "Academic Dean’s Assistant",
+    org: "Keiser University",
+    period: "Jan 2022 – May 2022",
+    bullets: [
+      "Assisted the Academic Dean with administrative and academic coordination tasks.",
+      "Prepared reports, documentation, and summaries to support decision-making processes.",
+      "Supported communication between academic departments and administrative offices."
+    ],
+    skills: ["Academic Administration", "Documentation", "Coordination"]
+  },
+  {
+    key: "customer-service",
+    title: "Customer Service & BI Support",
+    org: "Multiple Roles",
+    period: "Aug 2022 – Apr 2025",
+    bullets: [
+      "Delivered customer-facing technical and service support in presencial environments.",
+      "Worked with data tools such as Microsoft Power BI and PHP to support reporting and operational needs.",
+      "Developed strong problem-solving and communication skills in high-demand service contexts."
+    ],
+    skills: ["Customer Support", "Power BI", "Problem Solving"]
+  }
+];
+---
+
+<section id="experience" class="experience section">
+  <div class="container">
+    <div class="experience-head">
+      <h2><span class="slash">/</span> experience</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="experience-grid" x-data="{ active: 'program-leader' }">
+      <!-- Roles -->
+      <aside class="experience-nav">
+        {roles.map((r) => (
+          <button
+            class="experience-tab"
+            :class="{ active: active === '{r.key}' }"
+            @click={`active='${r.key}'`}
+          >
+            {r.title}
+          </button>
+        ))}
+      </aside>
+
+      <!-- Details -->
+      <div class="experience-content">
+        {roles.map((r) => (
+          <div x-show={`active === '${r.key}'`} class="experience-panel">
+            <h3>{r.title}</h3>
+
+            <p class="meta">
+              <span class="org">{r.org}</span> · {r.period}
+            </p>
+
+            <ul class="experience-list">
+              {r.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+
+            <div class="skills">
+              {r.skills.map((s) => (
+                <span class="skill-chip">{s}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>

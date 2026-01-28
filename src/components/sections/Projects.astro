@@ -1,0 +1,106 @@
+---
+import "../../styles/global.css";
+
+const projects = [
+  {
+    name: "Blog Post System",
+    tagline: "Social media platform for creating posts, profiles, and interactions.",
+    href: "https://github.com/icywest/blog_post_system.git",
+    stack: ["Full-stack"],
+    accent: "blue",
+    badge: "GitHub",
+  },
+  {
+    name: "Tutoring Center System",
+    tagline:
+      "Multi-platform solution for tutoring management: booking, profiles, admin reports, and KPI indicators.",
+    href: "https://github.com/icywest/Tutoring_Center_System.git",
+    stack: ["React", "Node.js", "Express", "MySQL"],
+    accent: "violet",
+    badge: "GitHub",
+  },
+  {
+    name: "SoftwareHub",
+    tagline:
+      "Mobile Software Club platform with events, real-time chat, media sharing, and offline access.",
+    href: "https://github.com/icywest/softwarehub.git",
+    stack: ["Expo RN", "Node.js", "MongoDB", "Socket.IO"],
+    accent: "teal",
+    badge: "GitHub",
+  },
+  {
+    name: "eventDSL",
+    tagline: "Python Domain-Specific Language with web tooling, built using textX.",
+    href: "https://github.com/icywest/eventDSL.git",
+    stack: ["Python", "textX", "JavaScript", "CSS", "HTML"],
+    accent: "amber",
+    badge: "GitHub",
+  },
+
+  // NEW
+  {
+    name: "TaskManager",
+    tagline: "Task management app to organize work, track progress, and manage daily to-dos.",
+    href: "https://github.com/icywest/taskManager",
+    stack: ["Python"],
+    accent: "blue",
+    badge: "GitHub",
+  },
+  {
+    name: "Turing Machine Vigenère Cipher Simulator",
+    tagline:
+      "React simulator with single-tape and multi-tape views to visualize how a Turing Machine can model Vigenère Cipher encryption.",
+    href: "https://github.com/icywest/vigenere_cipherTM",
+    stack: ["React", "Visualization", "Turing Machine"],
+    accent: "violet",
+    badge: "GitHub",
+  },
+];
+---
+
+<section class="projects">
+  <header class="projects__header">
+    <h1>Projects</h1>
+    <p class="muted">
+      Selected work — systems, platforms, and experiments I’ve built across web,
+      mobile, and backend.
+    </p>
+  </header>
+
+  <div class="projects__grid">
+    {projects.map((p) => (
+      <a
+        class="win"
+        href={p.href}
+        target="_blank"
+        rel="noreferrer"
+        data-accent={p.accent}
+      >
+        <div class="win__top">
+          <div class="win__dots">
+            <span class="dot dot--r" />
+            <span class="dot dot--y" />
+            <span class="dot dot--g" />
+          </div>
+
+          <div class="win__title">Project</div>
+
+          <div class="win__badge">{p.badge}</div>
+        </div>
+
+        <div class="win__body">
+          <h3 class="win__name">{p.name}</h3>
+          <p class="win__desc">{p.tagline}</p>
+
+          <div class="win__stack">
+            {p.stack.map((t) => (
+              <span class="pill">{t}</span>
+            ))}
+          </div>
+
+          {p.meta && <div class="win__meta">{p.meta}</div>}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

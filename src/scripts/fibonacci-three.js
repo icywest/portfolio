@@ -71,7 +71,7 @@ function makeStar(COUNT) {
   return out;
 }
 
-// •ᴗ• Happy face - clean and simple
+// •ᴗ• Happy face 
 function makeHappy(COUNT) {
   const out = new Float32Array(COUNT * 3);
   let idx = 0;
