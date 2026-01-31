@@ -578,184 +578,174 @@ section {
 /* ---------------------------
    Layout
 ---------------------------- */
-
+/* ===== PROJECTS SECTION ===== */
 .projects {
-  padding: 64px 16px;
+  max-width: 1400px; /* Wider container for 3 columns */
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .projects__header {
-  max-width: 1080px;
-  margin: 0 auto 32px;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .projects__header h1 {
-  margin: 0 0 8px;
-  font-size: 28px;
-  letter-spacing: .3px;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.muted {
-  opacity: .72;
-  max-width: 70ch;
+.projects__header .muted {
+  color: #888;
+  font-size: 1.1rem;
 }
 
+/* ===== 3x3 GRID LAYOUT ===== */
 .projects__grid {
-  max-width: 1080px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem;
 }
 
-@media (max-width: 980px) {
+/* Responsive: 2 columns on tablet */
+@media (max-width: 1100px) {
   .projects__grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 620px) {
+/* Responsive: 1 column on mobile */
+@media (max-width: 700px) {
   .projects__grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ---------------------------
-   Window Card
----------------------------- */
-
+/* ===== BIGGER CARD STYLES ===== */
 .win {
-  grid-column: span 4;
   display: flex;
   flex-direction: column;
+  background: #1a1a2e;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.03)
-  );
-  box-shadow: 0 14px 48px rgba(0,0,0,.35);
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
-  overflow: hidden;
-  position: relative;
-  transition: transform .18s ease, border-color .18s ease;
-}
-
-.win::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  pointer-events: none;
-  opacity: .9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px; /* Bigger minimum height */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .win:hover {
-  transform: translateY(-4px);
-  border-color: rgba(146,172,255,.35);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* ---------------------------
-   Top Bar
----------------------------- */
-
+/* Top bar with dots */
 .win__top {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: rgba(0,0,0,.22);
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(10px);
+  justify-content: space-between;
+  padding: 1rem 1.5rem; /* Bigger padding */
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .win__dots {
   display: flex;
-  gap: 7px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-}
-
-.dot--r { background: #ff5f57; }
-.dot--y { background: #febc2e; }
-.dot--g { background: #28c840; }
-
-.win__title {
-  font-size: 12px;
-  opacity: .75;
-  flex: 1;
-}
-
-.win__badge {
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-}
-
-/* ---------------------------
-   Body
----------------------------- */
-
-.win__body {
-  padding: 14px 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.win__name {
-  margin: 0;
-  font-size: 16px;
-}
-
-.win__desc {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.45;
-  opacity: .78;
-}
-
-.win__stack {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
+.dot {
+  width: 14px; /* Bigger dots */
+  height: 14px;
+  border-radius: 50%;
+}
+
+.dot--r { background: #ff5f57; }
+.dot--y { background: #ffbd2e; }
+.dot--g { background: #28c840; }
+
+.win__title {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.win__badge {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #aaa;
+}
+
+/* Card body - BIGGER */
+.win__body {
+  padding: 2rem; /* Increased from ~1.5rem */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.win__name {
+  font-size: 1.5rem; /* Bigger title */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.win__desc {
+  font-size: 1.05rem; /* Bigger description */
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* Tech stack pills - BIGGER */
+.win__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
 .pill {
-  font-size: 11px;
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
+  font-size: 0.85rem; /* Bigger pills */
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 25px;
+  color: #bbb;
+  white-space: nowrap;
 }
 
-.win__meta {
-  font-size: 12px;
-  opacity: .7;
+/* ===== ACCENT COLORS ===== */
+.win[data-accent="blue"] {
+  border-top: 4px solid #3b82f6;
+}
+.win[data-accent="blue"] .win__name {
+  color: #60a5fa;
 }
 
-/* ---------------------------
-   Accent System
----------------------------- */
-
-.win[data-accent="blue"]::before {
-  background: radial-gradient(600px 220px at 30% -10%, rgba(146,172,255,.22), transparent 60%);
+.win[data-accent="violet"] {
+  border-top: 4px solid #8b5cf6;
+}
+.win[data-accent="violet"] .win__name {
+  color: #a78bfa;
 }
 
-.win[data-accent="violet"]::before {
-  background: radial-gradient(600px 220px at 30% -10%, rgba(186,120,255,.22), transparent 60%);
+.win[data-accent="teal"] {
+  border-top: 4px solid #14b8a6;
+}
+.win[data-accent="teal"] .win__name {
+  color: #2dd4bf;
 }
 
-.win[data-accent="teal"]::before {
-  background: radial-gradient(600px 220px at 30% -10%, rgba(70,220,210,.20), transparent 60%);
+.win[data-accent="amber"] {
+  border-top: 4px solid #f59e0b;
+}
+.win[data-accent="amber"] .win__name {
+  color: #fbbf24;
 }
 
-.win[data-accent="amber"]::before {
-  background: radial-gradient(600px 220px at 30% -10%, rgba(255,190,80,.20), transparent 60%);
-}
