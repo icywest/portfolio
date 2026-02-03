@@ -1,0 +1,19 @@
+{
+  "greeting": "Hello, World!",
+  "name": "Cynthia",
+  "tagline": "I'm a Software Engineer, born leader, and a passionate learner.",
+  "roles": [
+    "Software Leader",
+    "Educator",
+    "Speaker"
+  ],
+  "cta": {
+    "text": "More about me",
+    "href": "#about"
+  },
+  "commands": [
+    { "cmd": "whoami", "output": "cynthia" },
+    { "cmd": "pwd", "output": "~/portfolio" },
+    { "cmd": "cat status.txt", "output": "ready to build" }
+  ]
+}

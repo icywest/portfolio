@@ -1,113 +1,120 @@
 ---
-const roles = [
-  {
-    key: "program-leader",
-    title: "Program Leader – Software Engineering & MIS",
-    org: "Keiser University",
-    period: "Jan 2025 – Apr 2025",
-    bullets: [
-      "Coordinated and executed academic, technological, and community-focused events, including workshops, talks, and extracurricular activities.",
-      "Provided direct academic guidance and mentorship to students, supporting their learning paths and professional development.",
-      "Promoted collaborative work, student leadership, and active participation within the university community.",
-      "Represented the Software Engineering & MIS program in internal initiatives and institutional events."
-    ],
-    skills: ["Leadership", "Project Coordination", "Academic Mentorship"]
-  },
-  {
-    key: "peer-tutor",
-    title: "Peer Tutor",
-    org: "Keiser University",
-    period: "Jan 2024 – Apr 2025",
-    bullets: [
-      "Supported fellow students through peer-to-peer education, assisting with coursework, problem-solving, and exam preparation.",
-      "Adapted explanations to different learning styles to improve understanding of technical and academic concepts.",
-      "Encouraged independent learning and confidence in academic performance."
-    ],
-    skills: ["Peer Education", "Communication", "Mentoring"]
-  },
-  {
-    key: "tech-support",
-    title: "Technical Support Agent – Microsoft Entra ID & Outlook",
-    org: "Concentrix",
-    period: "Jun 2024 – Aug 2024",
-    bullets: [
-      "Provided technical support for Microsoft Entra ID, managing user access, identity synchronization, and domain-related issues.",
-      "Configured and troubleshot Active Directory and DNS environments affecting authentication services.",
-      "Resolved Outlook email connectivity issues involving IMAP, SMTP, and POP3 protocols."
-    ],
-    skills: ["Microsoft Entra ID", "Active Directory", "Technical Support"]
-  },
-  {
-    key: "academic-assistant",
-    title: "Academic Dean’s Assistant",
-    org: "Keiser University",
-    period: "Jan 2022 – May 2022",
-    bullets: [
-      "Assisted the Academic Dean with administrative and academic coordination tasks.",
-      "Prepared reports, documentation, and summaries to support decision-making processes.",
-      "Supported communication between academic departments and administrative offices."
-    ],
-    skills: ["Academic Administration", "Documentation", "Coordination"]
-  },
-  {
-    key: "customer-service",
-    title: "Customer Service & BI Support",
-    org: "Multiple Roles",
-    period: "Aug 2022 – Apr 2025",
-    bullets: [
-      "Delivered customer-facing technical and service support in presencial environments.",
-      "Worked with data tools such as Microsoft Power BI and PHP to support reporting and operational needs.",
-      "Developed strong problem-solving and communication skills in high-demand service contexts."
-    ],
-    skills: ["Customer Support", "Power BI", "Problem Solving"]
-  }
-];
+import experience from "../../data/experience.json";
+import { Icon } from "astro-icon/components";
+
+const getStatusColor = (period: string) => {
+  if (period.includes("2025")) return "active";
+  if (period.includes("2024")) return "recent";
+  return "past";
+};
 ---
 
-<section id="experience" class="experience section">
-  <div class="container">
-    <div class="experience-head">
-      <h2><span class="slash">/</span> experience</h2>
-      <div class="rule"></div>
-    </div>
+<section id="experience" class="exp">
+  <div class="exp__container">
+    <!-- Header -->
+    <header class="exp__header">
+      <div class="exp__title">
+        <span class="exp__prompt">icy@portfolio:~$</span>
+        <h2>cat experience.log</h2>
+      </div>
+      <div class="exp__rule"></div>
+    </header>
 
-    <div class="experience-grid" x-data="{ active: 'program-leader' }">
-      <!-- Roles -->
-      <aside class="experience-nav">
-        {roles.map((r) => (
-          <button
-            class="experience-tab"
-            :class="{ active: active === '{r.key}' }"
-            @click={`active='${r.key}'`}
-          >
-            {r.title}
-          </button>
-        ))}
+    <!-- Terminal Window -->
+    <div class="exp__terminal" x-data="{ active: 'program-leader' }">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="exp__sidebar">
+        <nav class="exp__nav">
+          {experience.map((role, i) => (
+            <button
+              class="exp__tab"
+              :class={`{ 'exp__tab--active': active === '${role.key}' }`}
+              @click={`active = '${role.key}'`}
+            >
+              <span class="exp__tab-index">0{i + 1}</span>
+              <div class="exp__tab-content">
+                <span class="exp__tab-title">{role.title}</span>
+                <span class="exp__tab-org">{role.org}</span>
+              </div>
+              <span class="exp__tab-arrow">→</span>
+            </button>
+          ))}
+        </nav>
       </aside>
 
-      <!-- Details -->
-      <div class="experience-content">
-        {roles.map((r) => (
-          <div x-show={`active === '${r.key}'`} class="experience-panel">
-            <h3>{r.title}</h3>
-
-            <p class="meta">
-              <span class="org">{r.org}</span> · {r.period}
-            </p>
-
-            <ul class="experience-list">
-              {r.bullets.map((b) => (
-                <li>{b}</li>
-              ))}
-            </ul>
-
-            <div class="skills">
-              {r.skills.map((s) => (
-                <span class="skill-chip">{s}</span>
-              ))}
-            </div>
+      <!-- Main Content Panel -->
+      <div class="exp__main">
+        <div class="exp__main-top">
+          <div class="exp__dots">
+            <span class="dot dot--r"></span>
+            <span class="dot dot--y"></span>
+            <span class="dot dot--g"></span>
           </div>
-        ))}
+          <span class="exp__main-title">~/experience</span>
+          <div class="exp__main-actions">
+            <Icon name="lucide:terminal" />
+          </div>
+        </div>
+
+        <div class="exp__panels">
+          {experience.map((role) => (
+            <article
+              class="exp__panel"
+              x-show={`active === '${role.key}'`}
+              x-cloak
+            >
+              <!-- Command prompt -->
+              <div class="exp__cmd">
+                <span class="exp__cmd-prompt">$</span>
+                <span class="exp__cmd-text">{role.cmd}</span>
+                <span class="exp__cmd-cursor">▋</span>
+              </div>
+
+              <!-- Role header -->
+              <header class="exp__role-header">
+                <h3 class="exp__role-title">{role.title}</h3>
+                <p class="exp__role-subtitle">{role.subtitle}</p>
+              </header>
+
+              <!-- Meta info -->
+              <div class="exp__meta">
+                <span class="exp__meta-item">
+                  <Icon name="lucide:building-2" />
+                  {role.org}
+                </span>
+                <span class="exp__meta-divider">│</span>
+                <span class="exp__meta-item">
+                  <Icon name="lucide:calendar" />
+                  {role.period}
+                </span>
+                <span class="exp__meta-divider">│</span>
+                <span class={`exp__status exp__status--${getStatusColor(role.period)}`}>
+                  <span class="exp__status-dot"></span>
+                  {getStatusColor(role.period)}
+                </span>
+              </div>
+
+              <!-- Bullets -->
+              <ul class="exp__list">
+                {role.bullets.map((bullet) => (
+                  <li class="exp__list-item">
+                    <span class="exp__list-marker">→</span>
+                    <span class="exp__list-text">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Skills -->
+              <div class="exp__skills">
+                <span class="exp__skills-label"># tags:</span>
+                {role.skills.map((skill) => (
+                  <span class="exp__skill">{skill}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </div>

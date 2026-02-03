@@ -1,0 +1,16 @@
+{
+  "brand": {
+    "name": "icypinks",
+    "logo": "/src/assets/images/icylogo.svg"
+  },
+  "links": [
+    { "href": "#about", "label": "about", "cmd": "cat" },
+    { "href": "#experience", "label": "experience", "cmd": "ls" },
+    { "href": "#projects", "label": "projects", "cmd": "cd" }
+  ],
+  "social": [
+    { "href": "https://linkedin.com/in/icywest", "icon": "lucide:linkedin", "label": "LinkedIn" },
+    { "href": "https://github.com/icywest", "icon": "lucide:github", "label": "GitHub" },
+    { "href": "mailto:icynwest@gmail.com", "icon": "lucide:mail", "label": "Email" }
+  ]
+}

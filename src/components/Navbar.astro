@@ -1,60 +1,115 @@
 ---
 import { Icon } from "astro-icon/components";
-
-const links = [
-  { href: "#about", label: "About", icon: "lucide:user" },
-  { href: "#experience", label: "Experience", icon: "lucide:briefcase" },
-  { href: "#projects", label: "Projects", icon: "lucide:folder" },
-];
+import nav from "../data/navigation.json";
 ---
 
-<header style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(127,127,127,.25);
-  background: rgba(14, 9, 41, 0.85);
-  backdrop-filter: blur(8px);
-">
-  <div
-    style="
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 16px;
-      gap:24px;
-      max-width:1200px;
-      margin:0 auto;
-    "
-  >
-    <!-- LEFT -->
-    <div style="display:flex;align-items:center;gap:24px;">
-      <img src="/src/assets/images/icylogo.svg" alt="Cynthia West" style="height:50px;" />
-      <a href="/" style="font-weight:700;font-size:24px; font-family: monospace;">
-        icypinks |
+<header class="nav">
+  <div class="nav__inner">
+    
+    <!-- Left: Brand + Links -->
+    <div class="nav__left">
+      
+      <!-- Logo/Brand -->
+      <a href="/" class="nav__brand">
+        <img src={nav.brand.logo} alt={nav.brand.name} class="nav__logo" />
+        <span class="nav__name">
+          <span class="nav__prompt">~</span>/{nav.brand.name}
+        </span>
       </a>
 
-      <nav style="display:flex;gap:16px;font-weight:600;">
-        {links.map((l) => (
-          <a href={l.href}>{l.label}</a>
+      <!-- Divider -->
+      <span class="nav__divider">│</span>
+
+      <!-- Navigation Links -->
+      <nav class="nav__links">
+        {nav.links.map((link) => (
+          <a href={link.href} class="nav__link">
+            <span class="nav__link-cmd">{link.cmd}</span>
+            <span class="nav__link-label">{link.label}</span>
+          </a>
         ))}
       </nav>
     </div>
 
-    <!-- RIGHT -->
-    <div style="display:flex;align-items:center;gap:14px;">
-      <a href="https://linkedin.com/in/icywest" target="_blank">
-        <Icon name="lucide:linkedin" size="18" />
-      </a>
-      <a href="https://github.com/icywest" target="_blank">
-        <Icon name="lucide:github" size="18" />
-      </a>
-      <a href="mailto:icynwest@gmail.com">
-        <Icon name="lucide:mail" size="18" />
-      </a>
+    <!-- Right: Social + Status -->
+    <div class="nav__right">
+      
+      <!-- Status indicator -->
+      <div class="nav__status">
+        <span class="nav__status-dot"></span>
+        <span class="nav__status-text">online</span>
+      </div>
+
+      <!-- Divider -->
+      <span class="nav__divider">│</span>
+
+      <!-- Social Icons -->
+      <div class="nav__social">
+        {nav.social.map((s) => (
+          <a 
+            href={s.href} 
+            target="_blank" 
+            rel="noreferrer"
+            class="nav__social-link"
+            aria-label={s.label}
+          >
+            <Icon name={s.icon} />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="nav__toggle" aria-label="Toggle menu" id="nav-toggle">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile" id="nav-mobile">
+    <div class="nav__mobile-inner">
+      {nav.links.map((link, i) => (
+        <a href={link.href} class="nav__mobile-link">
+          <span class="nav__mobile-index">0{i + 1}</span>
+          <span class="nav__mobile-cmd">$ {link.cmd}</span>
+          <span class="nav__mobile-label">{link.label}</span>
+        </a>
+      ))}
+      
+      <div class="nav__mobile-social">
+        {nav.social.map((s) => (
+          <a 
+            href={s.href} 
+            target="_blank" 
+            rel="noreferrer"
+            class="nav__mobile-social-link"
+          >
+            <Icon name={s.icon} />
+            <span>{s.label}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </header>
 
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const mobile = document.getElementById('nav-mobile');
+  
+  toggle?.addEventListener('click', () => {
+    mobile?.classList.toggle('nav__mobile--open');
+    toggle.classList.toggle('nav__toggle--active');
+  });
+
+  // Close on link click
+  document.querySelectorAll('.nav__mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobile?.classList.remove('nav__mobile--open');
+      toggle?.classList.remove('nav__toggle--active');
+    });
+  });
+</script>

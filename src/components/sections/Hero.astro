@@ -1,30 +1,93 @@
 ---
 import "../../styles/global.css";
+import hero from "../../data/hero.json";
 ---
 
-<section id="hero">
-  <div class="hero-inner">
+<section id="hero" class="hero">
+  <div class="hero__inner">
 
     <!-- LEFT: Visual -->
-    <div class="hero-visual">
+    <div class="hero__visual">
       <canvas id="fib" aria-hidden="true"></canvas>
-    </div>
-
-    <!-- RIGHT: Intro -->
-    <div class="hero-content">
-      <h1 style="font-family: monospace;">
-        Hello, World! </br><span class="accent">It's <span class="muted" style = "color: #ffaab8ff"; font-family: "ui-sans-serif"> Cynthia</span> here<span class="cursor">.</span>
-      </h1>
-
-      <p class="hero-desc" style="margin:0 0 14px; padding:12px;">
-    I'm a Software Engineer, born leader, and a passionate learner.
-      </p>
-
-      <div class = "buttons">
-        <a href="#about" class="btn">More about me :)</a>
+      
+      <!-- Floating terminal snippets -->
+      <div class="hero__float hero__float--1">
+        <span class="hero__float-prompt">$</span>
+        <span class="hero__float-cmd">npm run dev</span>
+      </div>
+      <div class="hero__float hero__float--2">
+        <span class="hero__float-prompt">$</span>
+        <span class="hero__float-cmd">welcome here</span>
       </div>
     </div>
 
+    <!-- RIGHT: Intro -->
+    <div class="hero__content">
+      
+      <!-- Terminal prompt intro -->
+      <div class="hero__terminal-line">
+        <span class="hero__user">icy</span>
+        <span class="hero__at">@</span>
+        <span class="hero__host">portfolio</span>
+        <span class="hero__colon">:</span>
+        <span class="hero__path">~</span>
+        <span class="hero__dollar">$</span>
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="hero__title">
+        <span class="hero__greeting">{hero.greeting}</span>
+        <br />
+        <span class="hero__intro">
+          It's <span class="hero__name">{hero.name}</span> here<span class="hero__cursor">_</span>
+        </span>
+      </h1>
+
+      <!-- Output block -->
+      <div class="hero__output">
+        <span class="hero__output-arrow">→</span>
+        <p class="hero__desc">{hero.tagline}</p>
+      </div>
+
+      <!-- Role badges -->
+      <div class="hero__roles">
+        {hero.roles.map((role, i) => (
+          <span class="hero__role">
+            <span class="hero__role-index">{`0${i + 1}`}</span>
+            {role}
+          </span>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="hero__cta">
+        <a href={hero.cta.href} class="hero__btn">
+          <span class="hero__btn-prompt">$</span>
+          <span class="hero__btn-cmd">cd ./about</span>
+          <span class="hero__btn-text">// {hero.cta.text}</span>
+        </a>
+      </div>
+
+      <!-- Mini command history -->
+      <div class="hero__history">
+        {hero.commands.map((c) => (
+          <div class="hero__history-line">
+            <span class="hero__history-prompt">$</span>
+            <span class="hero__history-cmd">{c.cmd}</span>
+            <span class="hero__history-output">{c.output}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom decorative line -->
+  <div class="hero__bottom-line">
+    <span class="hero__line-text">// scroll to explore</span>
+    <div class="hero__line-bar"></div>
+    <span class="hero__line-arrow">↓</span>
   </div>
 </section>
 

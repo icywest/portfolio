@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Blog Post System",
+    "tagline": "A social platform where users create posts, build profiles, and interact with each other.",
+    "href": "https://github.com/icywest/blog_post_system.git",
+    "stack": ["XXXX"],
+    "accent": "blue"
+  },
+  {
+    "name": "Tutoring Center System",
+    "tagline": "Booking, profiles, admin dashboards, and KPI tracking — all in one tutoring management solution.",
+    "href": "https://github.com/icywest/Tutoring_Center_System.git",
+    "stack": ["React", "Node.js", "Express", "MySQL"],
+    "accent": "violet"
+  },
+  {
+    "name": "SoftwareHub",
+    "tagline": "Mobile app for our Software Club — events, real-time chat, media sharing, works offline too.",
+    "href": "https://github.com/icywest/softwarehub.git",
+    "stack": ["Expo GO", "Node.js", "MongoDB", "Socket.IO"],
+    "accent": "teal"
+  },
+  {
+    "name": "eventDSL",
+    "tagline": "Built a custom domain-specific language in Python with textX, plus web tooling to go with it.",
+    "href": "https://github.com/icywest/eventDSL.git",
+    "stack": ["Python", "textX", "JavaScript", "CSS", "HTML"],
+    "accent": "amber"
+  },
+  {
+    "name": "TaskManager",
+    "tagline": "Simple task manager to keep track of daily to-dos and monitor progress over time.",
+    "href": "https://github.com/icywest/taskManager",
+    "stack": ["Python"],
+    "accent": "teal"
+  },
+  {
+    "name": "Vigenère Cipher TM",
+    "tagline": "Interactive simulator showing how a Turing Machine handles Vigenère encryption, step by step.",
+    "href": "https://github.com/icywest/vigenere_cipherTM",
+    "stack": ["React", "Visualization", "Turing Machine"],
+    "accent": "blue"
+  }
+]

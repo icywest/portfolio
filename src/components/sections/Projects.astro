@@ -1,113 +1,101 @@
 ---
 import "../../styles/global.css";
+import projects from "../../data/projects.json";
+import { Icon } from "astro-icon/components";
 
-const projects = [
-  {
-    name: "Blog Post System",
-    tagline: "Social media platform for creating posts, profiles, and interactions.",
-    href: "https://github.com/icywest/blog_post_system.git",
-    stack: ["Full-stack"],
-    accent: "blue",
-    badge: "GitHub",
-  },
-  {
-    name: "Tutoring Center System",
-    tagline:
-      "Multi-platform solution for tutoring management: booking, profiles, admin reports, and KPI indicators.",
-    href: "https://github.com/icywest/Tutoring_Center_System.git",
-    stack: ["React", "Node.js", "Express", "MySQL"],
-    accent: "violet",
-    badge: "GitHub",
-  },
-  {
-    name: "SoftwareHub",
-    tagline:
-      "Mobile Software Club platform with events, real-time chat, media sharing, and offline access.",
-    href: "https://github.com/icywest/softwarehub.git",
-    stack: ["Expo RN", "Node.js", "MongoDB", "Socket.IO"],
-    accent: "teal",
-    badge: "GitHub",
-  },
-  {
-    name: "eventDSL",
-    tagline: "Python Domain-Specific Language with web tooling, built using textX.",
-    href: "https://github.com/icywest/eventDSL.git",
-    stack: ["Python", "textX", "JavaScript", "CSS", "HTML"],
-    accent: "amber",
-    badge: "GitHub",
-  },
-  {
-    name: "TaskManager",
-    tagline: "Task management app to organize work, track progress, and manage daily to-dos.",
-    href: "https://github.com/icywest/taskManager",
-    stack: ["Python"],
-    accent: "blue",
-    badge: "GitHub",
-  },
-  {
-    name: "Turing Machine Vigenère Cipher Simulator",
-    tagline:
-      "React simulator with single-tape and multi-tape views to visualize how a Turing Machine can model Vigenère Cipher encryption.",
-    href: "https://github.com/icywest/vigenere_cipherTM",
-    stack: ["React", "Visualization", "Turing Machine"],
-    accent: "violet",
-    badge: "GitHub",
-  },
-  // Add 3 more projects to fill 3x3 grid, or remove these placeholders
-  // {
-  //   name: "Project 7",
-  //   tagline: "Description here...",
-  //   href: "#",
-  //   stack: ["Tech"],
-  //   accent: "teal",
-  //   badge: "GitHub",
-  // },
-];
+// Terminal commands based on primary tech
+const getTerminalCmd = (stack: string[], name: string) => {
+  const primary = stack[0]?.toLowerCase() || "";
+  const slug = name.toLowerCase().replace(/\s+/g, "-");
+  
+  if (primary.includes("react") || primary.includes("expo")) return `npm run dev`;
+  if (primary.includes("node")) return `node server.js`;
+  if (primary.includes("python")) return `python main.py`;
+  if (primary.includes("full-stack")) return `docker-compose up`;
+  return `cd ${slug}`;
+};
+
+// More natural prompts
+const getPrompt = (index: number) => {
+  const prompts = [
+    { user: "dev", path: "~/code" },
+    { user: "user", path: "~/projects" },
+    { user: "admin", path: "~/workspace" },
+    { user: "dev", path: "~/apps" },
+    { user: "root", path: "/var/www" },
+    { user: "dev", path: "~/src" },
+  ];
+  return prompts[index % prompts.length];
+};
+
+// Status messages
+const getStatus = (stack: string[]) => {
+  const count = stack.length;
+  if (count >= 4) return "production";
+  if (count >= 2) return "stable";
+  return "ready";
+};
 ---
 
 <section class="projects">
   <header class="projects__header">
-    <h1>Projects</h1>
+    <h1>projects</h1>
     <p class="muted">
-      Selected work — systems, platforms, and experiments I've built across web,
-      mobile, and backend.
+      # a few things i've developed (alone and in teams)
     </p>
   </header>
 
   <div class="projects__grid">
-    {projects.map((p) => (
-      <a
-        class="win"
-        href={p.href}
-        target="_blank"
-        rel="noreferrer"
-        data-accent={p.accent}
-      >
-        <div class="win__top">
-          <div class="win__dots">
-            <span class="dot dot--r" />
-            <span class="dot dot--y" />
-            <span class="dot dot--g" />
+    {projects.map((p, i) => {
+      const prompt = getPrompt(i);
+      const cmd = getTerminalCmd(p.stack, p.name);
+      const status = getStatus(p.stack);
+      
+      return (
+        <a
+          class="win"
+          href={p.href}
+          target="_blank"
+          rel="noreferrer"
+          data-accent={p.accent}
+        >
+          <div class="win__top">
+            <div class="win__dots">
+              <span class="dot dot--r" />
+              <span class="dot dot--y" />
+              <span class="dot dot--g" />
+            </div>
+
+            <div class="win__title">{prompt.user}@icy: {prompt.path}</div>
+
+            <div class="win__badge">
+              <Icon name="lucide:github" />
+            </div>
           </div>
 
-          <div class="win__title">Project</div>
+          <div class="win__body">
+            <div class="win__prompt">
+              <span>$</span> {cmd}
+            </div>
+            
+            <h3 class="win__name">{p.name}</h3>
+            <p class="win__desc">{p.tagline}</p>
 
-          <div class="win__badge">{p.badge}</div>
-        </div>
-
-        <div class="win__body">
-          <h3 class="win__name">{p.name}</h3>
-          <p class="win__desc">{p.tagline}</p>
-
-          <div class="win__stack">
-            {p.stack.map((t) => (
-              <span class="pill">{t}</span>
-            ))}
+            <div class="win__stack">
+              {p.stack.map((t) => (
+                <span class="pill">{t}</span>
+              ))}
+            </div>
           </div>
 
-          {p.meta && <div class="win__meta">{p.meta}</div>}
-        </div>
-      </a>
-    ))}
+          <div class="win__footer">
+            <div class="win__footer-left">
+              <span>{p.stack.length} {p.stack.length === 1 ? "tech" : "techs"}</span>
+            </div>
+            <span class="win__arrow">view source →</span>
+          </div>
+        </a>
+      );
+    })}
   </div>
 </section>

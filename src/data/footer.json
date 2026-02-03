@@ -1,0 +1,14 @@
+{
+  "author": "Cynthia",
+  "github": "https://github.com/icywest",
+  "commands": [
+    { "cmd": "echo $STATUS", "output": "available for work" },
+    { "cmd": "uptime", "output": "always learning" }
+  ],
+  "quickLinks": [
+    { "href": "#hero", "label": "home" },
+    { "href": "#about", "label": "about" },
+    { "href": "#experience", "label": "experience" },
+    { "href": "#projects", "label": "projects" }
+  ]
+}

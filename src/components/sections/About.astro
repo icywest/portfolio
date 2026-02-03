@@ -1,57 +1,137 @@
 ---
-const tech = [
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js / Express",
-  "SQL Server",
-  "Power BI",
-  "TensorFlow",
-];
+import about from "../../data/about.json";
+import { Icon } from "astro-icon/components";
 
-const imgSrc = "src/assets/images/icylogo.svg"; // put your photo in public/images/
+const getCategoryIcon = (category: string) => {
+  const icons: Record<string, string> = {
+    lang: "lucide:code",
+    frontend: "lucide:layout",
+    backend: "lucide:server",
+    data: "lucide:database",
+    ml: "lucide:brain",
+  };
+  return icons[category] || "lucide:terminal";
+};
 ---
 
-<section id="about" class="about section">
-  <div class="container">
-    <div class="about-head">
-      <h2 class="about-title" style="font-family: 'Roboto Mono', monospace;">
-        <span class="slash">/</span> about me
-      </h2>
-      <div class="about-rule" aria-hidden="true"></div>
-    </div>
+<section id="about" class="abt">
+  <div class="abt__container">
+    <!-- Header -->
+    <header class="abt__header">
+      <div class="abt__title">
+        <span class="abt__prompt">icy@portfolio:~$</span>
+        <h2>cat about.md</h2>
+      </div>
+      <div class="abt__rule"></div>
+    </header>
 
-    <div class="about-grid">
-      <div class="about-left">
-        <p class="about-p">
-          I’m a <em>Software Engineering</em> graduate based in <strong>Managua, Nicaragua</strong>,
-          currently focused on building practical systems that combine software development,
-          cloud infrastructure, and data-driven decisions.
-        </p>
-        <p class="about-p muted">
-          I care about clean architecture, documentation, and building software that actually gets used. Also, I had worked as a guest speaker and event planner for tech communities.
-        </p>
-        <div class="about-tech">
-          <p class="about-tech-label muted">Here are some technologies I’ve been working with:</p>
+    <!-- Terminal Grid -->
+    <div class="abt__grid">
+      
+      <!-- Main Content Window -->
+      <div class="abt__main">
+        <div class="abt__window">
+          <div class="abt__window-top">
+            <div class="abt__dots">
+              <span class="dot dot--r"></span>
+              <span class="dot dot--y"></span>
+              <span class="dot dot--g"></span>
+            </div>
+            <span class="abt__window-title">~/about/readme.md</span>
+            <div class="abt__window-actions">
+              <Icon name="lucide:file-text" />
+            </div>
+          </div>
 
-          <ul class="tech-list" role="list">
-            {tech.map((t) => (
-              <li class="tech-item">
-                <span class="tech-caret" aria-hidden="true">▸</span>
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div style = "margin-top: 2rem; font-size: 0.9rem; font-family: 'Roboto Mono', monospace;" class = "buttons">
-          <a href="#leadership" class="btn">! check out some events I've organized</a>
+          <div class="abt__window-body">
+            <!-- File header -->
+            <div class="abt__file-header">
+              <span class="abt__file-comment"># whoami</span>
+            </div>
+
+            <!-- Bio paragraphs -->
+            <div class="abt__bio">
+              {about.bio.map((paragraph, i) => (
+                <p class="abt__bio-p" set:html={paragraph} />
+              ))}
+            </div>
+
+            <!-- Divider -->
+            <div class="abt__divider">
+              <span>---</span>
+            </div>
+
+            <!-- Tech section -->
+            <div class="abt__tech">
+              <span class="abt__file-comment"># tech_stack</span>
+              
+              <div class="abt__tech-grid">
+                {about.tech.map((t) => (
+                  <div class="abt__tech-item">
+                    <Icon name={getCategoryIcon(t.category)} />
+                    <span>{t.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="abt__cta">
+              <a href={about.cta.href} class="abt__cta-btn">
+                <span class="abt__cta-prompt">$</span>
+                <span>cd {about.cta.href}</span>
+                <span class="abt__cta-comment">// {about.cta.text}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <aside class="about-right">
-        <div class="photo-card">
-          <img src={imgSrc} alt="Portrait of Cynthia Nicolás West" loading="lazy" />
+      <!-- Sidebar - Photo + Info -->
+      <aside class="abt__sidebar">
+        <!-- Photo Window -->
+        <div class="abt__photo-window">
+          <div class="abt__window-top">
+            <div class="abt__dots">
+              <span class="dot dot--r"></span>
+              <span class="dot dot--y"></span>
+              <span class="dot dot--g"></span>
+            </div>
+            <span class="abt__window-title">avatar.svg</span>
+            <div class="abt__window-actions">
+              <Icon name="lucide:image" />
+            </div>
+          </div>
+          <div class="abt__photo-body">
+            <img src={about.imgSrc} alt={`Portrait of ${about.name}`} loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="abt__info-window">
+          <div class="abt__window-top">
+            <div class="abt__dots">
+              <span class="dot dot--r"></span>
+              <span class="dot dot--y"></span>
+              <span class="dot dot--g"></span>
+            </div>
+            <span class="abt__window-title">info.json</span>
+            <div class="abt__window-actions">
+              <Icon name="lucide:braces" />
+            </div>
+          </div>
+          <div class="abt__info-body">
+            <pre class="abt__json"><code>{`{`}
+  <span class="json-key">"name"</span>: <span class="json-string">"{about.name}"</span>,
+  <span class="json-key">"role"</span>: <span class="json-string">"{about.role}"</span>,
+  <span class="json-key">"location"</span>: <span class="json-string">"{about.location}"</span>,
+  <span class="json-key">"status"</span>: <span class="json-string">"{about.status}"</span>
+{`}`}</code></pre>
+            <div class="abt__status">
+              <span class="abt__status-dot"></span>
+              <span>{about.status}</span>
+            </div>
+          </div>
         </div>
       </aside>
     </div>

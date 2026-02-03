@@ -1,0 +1,73 @@
+[
+  {
+    "key": "program-leader",
+    "title": "Program Leader",
+    "subtitle": "Software Engineering & MIS",
+    "org": "Keiser University",
+    "period": "Jan 2025 – Apr 2025",
+    "cmd": "sudo lead --department=SE",
+    "bullets": [
+      "Coordinated and executed academic, technological, and community-focused events, including workshops, talks, and extracurricular activities.",
+      "Provided direct academic guidance and mentorship to students, supporting their learning paths and professional development.",
+      "Promoted collaborative work, student leadership, and active participation within the university community.",
+      "Represented the Software Engineering & MIS program in internal initiatives and institutional events."
+    ],
+    "skills": ["Leadership", "Project Coordination", "Academic Mentorship"]
+  },
+  {
+    "key": "peer-tutor",
+    "title": "Peer Tutor",
+    "subtitle": "Academic Support",
+    "org": "Keiser University",
+    "period": "Jan 2024 – Apr 2025",
+    "cmd": "tutor --mode=peer --subject=all",
+    "bullets": [
+      "Supported fellow students through peer-to-peer education, assisting with coursework, problem-solving, and exam preparation.",
+      "Adapted explanations to different learning styles to improve understanding of technical and academic concepts.",
+      "Encouraged independent learning and confidence in academic performance."
+    ],
+    "skills": ["Peer Education", "Communication", "Mentoring"]
+  },
+  {
+    "key": "tech-support",
+    "title": "Technical Support Agent",
+    "subtitle": "Microsoft Entra ID & Outlook",
+    "org": "Concentrix",
+    "period": "Jun 2024 – Aug 2024",
+    "cmd": "az ad user --help | grep sync",
+    "bullets": [
+      "Provided technical support for Microsoft Entra ID, managing user access, identity synchronization, and domain-related issues.",
+      "Configured and troubleshot Active Directory and DNS environments affecting authentication services.",
+      "Resolved Outlook email connectivity issues involving IMAP, SMTP, and POP3 protocols."
+    ],
+    "skills": ["Microsoft Entra ID", "Active Directory", "Technical Support"]
+  },
+  {
+    "key": "academic-assistant",
+    "title": "Academic Dean's Assistant",
+    "subtitle": "Administration",
+    "org": "Keiser University",
+    "period": "Jan 2022 – May 2022",
+    "cmd": "cat reports/*.pdf | summarize",
+    "bullets": [
+      "Assisted the Academic Dean with administrative and academic coordination tasks.",
+      "Prepared reports, documentation, and summaries to support decision-making processes.",
+      "Supported communication between academic departments and administrative offices."
+    ],
+    "skills": ["Academic Administration", "Documentation", "Coordination"]
+  },
+  {
+    "key": "customer-service",
+    "title": "Customer Service & BI Support",
+    "subtitle": "Data & Support",
+    "org": "Multiple Roles",
+    "period": "Aug 2022 – Apr 2025",
+    "cmd": "powerbi --export dashboard.pbix",
+    "bullets": [
+      "Delivered customer-facing technical and service support in presencial environments.",
+      "Worked with data tools such as Microsoft Power BI and PHP to support reporting and operational needs.",
+      "Developed strong problem-solving and communication skills in high-demand service contexts."
+    ],
+    "skills": ["Customer Support", "Power BI", "Problem Solving"]
+  }
+]
