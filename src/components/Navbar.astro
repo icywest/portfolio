@@ -22,12 +22,17 @@ import nav from "../data/navigation.json";
 
       <!-- Navigation Links -->
       <nav class="nav__links">
-        {nav.links.map((link) => (
-          <a href={link.href} class="nav__link">
-            <span class="nav__link-cmd">{link.cmd}</span>
-            <span class="nav__link-label">{link.label}</span>
-          </a>
-        ))}
+        {nav.links.map((link) => {
+          const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+
+          return (
+            <a href={href} class="nav__link">
+              <span class="nav__link-cmd">{link.cmd}</span>
+              <span class="nav__link-label">{link.label}</span>
+            </a>
+          );
+        })}
+
       </nav>
     </div>
 
@@ -71,14 +76,17 @@ import nav from "../data/navigation.json";
   <!-- Mobile Menu -->
   <div class="nav__mobile" id="nav-mobile">
     <div class="nav__mobile-inner">
-      {nav.links.map((link, i) => (
-        <a href={link.href} class="nav__mobile-link">
-          <span class="nav__mobile-index">0{i + 1}</span>
-          <span class="nav__mobile-cmd">$ {link.cmd}</span>
-          <span class="nav__mobile-label">{link.label}</span>
-        </a>
-      ))}
-      
+      {nav.links.map((link, i) => {
+        const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+
+        return (
+          <a href={href} class="nav__mobile-link">
+            <span class="nav__mobile-index">0{i + 1}</span>
+            <span class="nav__mobile-cmd">$ {link.cmd}</span>
+            <span class="nav__mobile-label">{link.label}</span>
+          </a>
+        );
+      })}
       <div class="nav__mobile-social">
         {nav.social.map((s) => (
           <a 

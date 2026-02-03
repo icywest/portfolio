@@ -6,7 +6,8 @@
   "links": [
     { "href": "#about", "label": "about", "cmd": "cat" },
     { "href": "#experience", "label": "experience", "cmd": "ls" },
-    { "href": "#projects", "label": "projects", "cmd": "cd" }
+    { "href": "#projects", "label": "projects", "cmd": "cd" },
+    { "href": "/leadership", "label": "leadership", "cmd": "sudo" }
   ],
   "social": [
     { "href": "https://linkedin.com/in/icywest", "icon": "lucide:linkedin", "label": "LinkedIn" },

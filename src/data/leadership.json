@@ -1,0 +1,113 @@
+{
+  "title": "leadership",
+  "subtitle": "community building, tech events & academic initiatives",
+  "intro": "Beyond code, I’ve helped build and sustain tech communities through event organization, partnerships, and student leadership across multiple semesters.",
+  "events": [
+    {
+      "id": "software-tech-2025",
+      "name": "Software Tech 2025",
+      "role": "Core Organizer & PR Lead",
+      "type": "conference",
+      "date": "Spring 2025",
+      "location": "Keiser University, Nicaragua",
+      "attendees": 100,
+      "description": "Flagship multi-segment technology event combining technical challenges, workshops, and interdisciplinary collaboration.",
+      "highlights": [
+        "Technical challenges (LeetCode-style) with industry sponsors",
+        "Workshops on Web Development and Web3",
+        "Ideathon with interdisciplinary teams",
+        "Sponsored prize by Blockchain Nicaragua",
+        "Recognized as Outstanding Event (SGA Awards)"
+      ],
+      "tags": ["Conference", "Education", "Community"],
+      "image": "/images/events/software-tech-2025.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "ux-ui-workshop-fall-2024",
+      "name": "UX/UI Workshop Series",
+      "role": "Co-Organizer & Speaker",
+      "type": "workshop",
+      "date": "Fall 2024",
+      "location": "Keiser University",
+      "attendees": 60,
+      "description": "Three-day workshop series focused on UX/UI, data, and business strategy.",
+      "highlights": [
+        "Day 1: UX fundamentals (Cynthia, Patrick, Mr. Félix)",
+        "Day 2: UX + Data with Yessica Flores",
+        "Day 3: UX + Business with Roberto Bonilla"
+      ],
+      "tags": ["Workshop", "UX/UI", "Design"],
+      "image": "/images/events/ux-ui-workshop.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "cybersecurity-month-2024",
+      "name": "Cybersecurity Awareness Month",
+      "role": "Organizer",
+      "type": "talk",
+      "date": "Oct 2024",
+      "location": "Keiser University",
+      "attendees": 80,
+      "description": "Awareness talk and collaboration with ESET as part of Cybersecurity Month.",
+      "highlights": [
+        "Industry-led session by ESET",
+        "Focused on cybersecurity best practices",
+        "Strengthened long-term partnership with ESET"
+      ],
+      "tags": ["Cybersecurity", "Industry", "Talk"],
+      "image": "/images/events/cybersecurity-month.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "women-in-stem-8m-2025",
+      "name": "Women in STEM Forum (8M)",
+      "role": "Organizer & Moderator",
+      "type": "panel",
+      "date": "Mar 2025",
+      "location": "Keiser University",
+      "attendees": 90,
+      "description": "Panel highlighting the experiences of women students in STEM fields.",
+      "highlights": [
+        "Featured 4 outstanding female students",
+        "Focused on representation and career growth",
+        "Part of International Women’s Day activities"
+      ],
+      "tags": ["Panel", "Women in Tech", "Leadership"],
+      "image": "/images/events/women-stem-2025.jpg",
+      "status": "completed"
+    },
+    {
+      "id": "ai-forum-policy-club",
+      "name": "AI & Society Forum",
+      "role": "Co-Organizer",
+      "type": "forum",
+      "date": "Spring 2025",
+      "location": "Keiser University",
+      "attendees": 100,
+      "description": "Interdisciplinary forum on Artificial Intelligence in collaboration with the Policy Club.",
+      "highlights": [
+        "Over 100 attendees",
+        "Cross-club collaboration",
+        "Discussion on AI impact and ethics"
+      ],
+      "tags": ["AI", "Forum", "Interdisciplinary"],
+      "image": "/images/events/ai-forum.jpg",
+      "status": "completed"
+    }
+  ],
+  "stats": [
+    { "value": "300+", "label": "people reached" },
+    { "value": "20+", "label": "events & initiatives" },
+    { "value": "2", "label": "Outstanding Club awards" },
+    { "value": "3", "label": "academic years of leadership" }
+  ],
+  "communities": [
+    {
+      "name": "Keiser Software Club",
+      "role": "Executive Board Member",
+      "period": "2024 – 2025",
+      "link": "#"
+    }
+  ]
+}
