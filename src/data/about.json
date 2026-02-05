@@ -10,14 +10,14 @@
   "tech": [
     { "name": "Python", "category": "lang" },
     { "name": "JavaScript", "category": "lang" },
-    { "name": "TypeScript", "category": "lang" },
+    { "name": "Java", "category": "lang" },
     { "name": "React", "category": "frontend" },
     { "name": "Node.js / Express", "category": "backend" },
     { "name": "SQL Server", "category": "data" },
     { "name": "Power BI", "category": "data" },
     { "name": "TensorFlow", "category": "ml" }
   ],
-  "status": "open to opportunities",
+  "dob": "16-06-2005",
   "cta": {
     "text": "check out some events I've organized",
     "href": "/leadership"

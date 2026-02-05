@@ -1,15 +1,17 @@
 [
   {
     "name": "Blog Post System",
-    "tagline": "A social platform where users create posts, build profiles, and interact with each other.",
+    "tagline": "A simple social media–style app focused on creating and viewing posts, built as a Node.js proof of concept.",
     "href": "https://github.com/icywest/blog_post_system.git",
-    "stack": ["XXXX"],
+    "image": "public/images/projects/blog_posts.png",
+    "stack": ["Node.js", "Express.js", "Handlebars", "CSS"],
     "accent": "blue"
   },
   {
     "name": "Tutoring Center System",
     "tagline": "Booking, profiles, admin dashboards, and KPI tracking — all in one tutoring management solution.",
     "href": "https://github.com/icywest/Tutoring_Center_System.git",
+    "image": "public/images/projects/tutoring_center.png",
     "stack": ["React", "Node.js", "Express", "MySQL"],
     "accent": "violet"
   },
@@ -17,6 +19,7 @@
     "name": "SoftwareHub",
     "tagline": "Mobile app for our Software Club — events, real-time chat, media sharing, works offline too.",
     "href": "https://github.com/icywest/softwarehub.git",
+    "image": "/images/softwarehub.png",
     "stack": ["Expo GO", "Node.js", "MongoDB", "Socket.IO"],
     "accent": "teal"
   },
@@ -24,6 +27,7 @@
     "name": "eventDSL",
     "tagline": "Built a custom domain-specific language in Python with textX, plus web tooling to go with it.",
     "href": "https://github.com/icywest/eventDSL.git",
+    "image": "/images/eventdsl.png",
     "stack": ["Python", "textX", "JavaScript", "CSS", "HTML"],
     "accent": "amber"
   },
@@ -31,6 +35,7 @@
     "name": "TaskManager",
     "tagline": "Simple task manager to keep track of daily to-dos and monitor progress over time.",
     "href": "https://github.com/icywest/taskManager",
+    "image": "public/images/projects/task_manager.png",
     "stack": ["Python"],
     "accent": "teal"
   },
@@ -38,6 +43,7 @@
     "name": "Vigenère Cipher TM",
     "tagline": "Interactive simulator showing how a Turing Machine handles Vigenère encryption, step by step.",
     "href": "https://github.com/icywest/vigenere_cipherTM",
+    "image": "public/images/projects/turing_machine.png",
     "stack": ["React", "Visualization", "Turing Machine"],
     "accent": "blue"
   }

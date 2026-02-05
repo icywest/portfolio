@@ -2097,7 +2097,24 @@ section {
   font-size: 0.9rem;
   font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
 }
+.win__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface-color);
+}
 
+.win__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.win:hover .win__image img {
+  transform: scale(1.05);
+}
 /* ===== GRID LAYOUT ===== */
 .projects__grid {
   display: grid;
@@ -2235,7 +2252,6 @@ section {
   margin-bottom: 0.85rem;
   flex: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2278,16 +2294,6 @@ section {
   gap: 0.5rem;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.3; }
-}
-
-.win__arrow {
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.2s ease;
-}
 
 .win:hover .win__arrow {
   opacity: 1;
@@ -2333,28 +2339,4 @@ section {
 }
 .win[data-accent="amber"]:hover {
   box-shadow: 0 10px 28px rgba(245, 158, 11, 0.15);
-}
-
-/* ===== SCANLINE EFFECT ===== */
-.win::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.08) 2px,
-    rgba(0, 0, 0, 0.08) 4px
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.win:hover::after {
-  opacity: 1;
 }

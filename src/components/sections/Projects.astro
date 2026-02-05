@@ -28,16 +28,9 @@ const getPrompt = (index: number) => {
   return prompts[index % prompts.length];
 };
 
-// Status messages
-const getStatus = (stack: string[]) => {
-  const count = stack.length;
-  if (count >= 4) return "production";
-  if (count >= 2) return "stable";
-  return "ready";
-};
 ---
 
-<section id ="projects" class = "projects">
+<section id="projects" class="projects">
   <header class="projects__header">
     <h1>projects</h1>
     <p class="muted">
@@ -49,7 +42,6 @@ const getStatus = (stack: string[]) => {
     {projects.map((p, i) => {
       const prompt = getPrompt(i);
       const cmd = getTerminalCmd(p.stack, p.name);
-      const status = getStatus(p.stack);
       
       return (
         <a
@@ -72,6 +64,12 @@ const getStatus = (stack: string[]) => {
               <Icon name="lucide:github" />
             </div>
           </div>
+
+          {p.image && (
+            <div class="win__image">
+              <img src={p.image} alt={p.name} />
+            </div>
+          )}
 
           <div class="win__body">
             <div class="win__prompt">
