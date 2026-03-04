@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+---
+
+<BaseLayout title="404 - Page not found">
+  <section class="notfound">
+      <h1 class="notfoundtitle">iCY404</h1>
+      <p>Hey! This page doesn't exist :(</p>
+      <canvas id="fib" class="fib-bg"></canvas>
+      <a class="btn" href="/">Go home</a>
+  </section>
+
+</BaseLayout>
+
+<script>
+  import { startFibonacci } from "../scripts/fibonacci-three.js"
+
+  const init = () => {
+    const canvas = document.getElementById("fib");
+    if (canvas) startFibonacci(canvas, {
+      dotSize: 0.085,
+      count: 1800,
+      flowerPetals: 7,
+      starSpikes: 5,
+      morphSeconds: 1.8,
+      holdSeconds: 2.4
+    });
+  };
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>
