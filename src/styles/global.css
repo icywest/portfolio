@@ -1,5 +1,6 @@
 :root {
   --section-gap: 300px;
+  --nav-height: 60px;
 
   color-scheme: dark;
 
@@ -1115,7 +1116,7 @@ section {
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    padding: 3rem 1.25rem 4rem;
+    padding: calc(var(--nav-height) + 1.5rem) 1.25rem 4rem;
   }
 
   .hero::before {
@@ -1174,7 +1175,7 @@ section {
 
 @media (max-width: 680px) {
   .hero {
-    padding: 2.25rem 1rem 3rem;
+    padding: calc(var(--nav-height) + 1.25rem) 1rem 3rem;
   }
 
   .hero__inner {
@@ -1218,11 +1219,12 @@ section {
 
 @media (max-width: 550px) {
   .hero {
-    padding: 1.5rem 1rem 2.5rem;
+    padding: calc(var(--nav-height) + 1rem) 1rem 2.5rem;
   }
 
   .hero__visual {
     min-height: 240px;
+    margin-top: 0.35rem;
   }
 
   .hero__title {
@@ -1270,11 +1272,12 @@ section {
 
 @media (max-width: 400px) {
   .hero {
-    padding: 1.25rem 0.9rem 2.25rem;
+    padding: calc(var(--nav-height) + 0.85rem) 0.9rem 2.25rem;
   }
 
   .hero__visual {
     min-height: 210px;
+    margin-top: 0.25rem;
   }
 
   .hero__visual canvas {
