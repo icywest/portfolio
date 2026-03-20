@@ -1,7 +1,7 @@
 {
   "title": "leadership",
   "subtitle": "community building, tech events & academic initiatives",
-  "intro": "Beyond code, I’ve helped build and sustain tech communities through event organization, partnerships, and student leadership across multiple semesters.",
+  "intro": "Beyond code, I've helped build and sustain tech communities through event organization, partnerships, and student leadership across multiple semesters.",
   "events": [
     {
       "id": "software-tech-2025",
@@ -10,8 +10,17 @@
       "type": "conference",
       "date": "Spring 2025",
       "location": "Keiser University, Nicaragua",
-      "attendees": 100,
       "description": "Flagship multi-segment technology event combining technical challenges, workshops, and interdisciplinary collaboration.",
+      "purpose": "To bring together students, industry professionals, and educators to explore emerging technologies and foster hands-on learning through competitions and workshops.",
+      "organization": ["Keiser Software Club", "Blockchain Nicaragua", "Student Government Association"],
+      "myContributions": [
+        "Led public relations and external communications",
+        "Coordinated partnerships with industry sponsors",
+        "Designed event branding and promotional materials",
+        "Managed registration system for 100+ attendees",
+        "Hosted opening ceremony and facilitated panel transitions"
+      ],
+      "skills": ["Event Management", "Public Relations", "Partnership Development", "Branding", "Public Speaking"],
       "highlights": [
         "Technical challenges (LeetCode-style) with industry sponsors",
         "Workshops on Web Development and Web3",
@@ -21,7 +30,13 @@
       ],
       "tags": ["Conference", "Education", "Community"],
       "image": "/images/events/software-tech-2025.jpg",
-      "status": "completed"
+      "gallery": [
+        "/images/events/software-tech-2025.jpg",
+        "/images/events/software-tech-2025-2.jpg",
+        "/images/events/software-tech-2025-3.jpg"
+      ],
+      "status": "completed",
+      "impact": ["partnerships", "logistics", "speaker coordination"]
     },
     {
       "id": "ux-ui-workshop-fall-2024",
@@ -30,8 +45,17 @@
       "type": "workshop",
       "date": "Fall 2024",
       "location": "Keiser University",
-      "attendees": 60,
       "description": "Three-day workshop series focused on UX/UI, data, and business strategy.",
+      "purpose": "To provide students with practical UX/UI skills and connect design thinking with data analytics and business strategy.",
+      "organization": ["Keiser Software Club"],
+      "myContributions": [
+        "Co-designed the 3-day curriculum structure",
+        "Delivered Day 1 presentation on UX fundamentals",
+        "Coordinated guest speakers for Days 2 & 3",
+        "Created workshop materials and exercises",
+        "Managed AV setup and live demonstrations"
+      ],
+      "skills": ["Workshop Facilitation", "UX Design", "Curriculum Design", "Public Speaking", "Coordination"],
       "highlights": [
         "Day 1: UX fundamentals (Cynthia, Patrick, Mr. Félix)",
         "Day 2: UX + Data with Yessica Flores",
@@ -39,17 +63,27 @@
       ],
       "tags": ["Workshop", "UX/UI", "Design"],
       "image": "/images/events/ux-ui-workshop.jpg",
-      "status": "completed"
+      "gallery": [],
+      "status": "completed",
+      "impact": ["curriculum", "speaker management", "hands-on delivery"]
     },
     {
       "id": "cybersecurity-month-2024",
       "name": "Cybersecurity Awareness Month",
       "role": "Organizer",
-      "type": "talk",
+      "type": "workshop",
       "date": "Oct 2024",
       "location": "Keiser University",
-      "attendees": 80,
       "description": "Awareness talk and collaboration with ESET as part of Cybersecurity Month.",
+      "purpose": "To raise awareness about cybersecurity best practices and establish lasting industry partnerships.",
+      "organization": ["Keiser Software Club", "ESET"],
+      "myContributions": [
+        "Initiated and negotiated partnership with ESET",
+        "Coordinated logistics for industry speaker visit",
+        "Promoted event across campus channels",
+        "Moderated Q&A session"
+      ],
+      "skills": ["Industry Relations", "Event Logistics", "Promotion", "Moderation"],
       "highlights": [
         "Industry-led session by ESET",
         "Focused on cybersecurity best practices",
@@ -57,7 +91,9 @@
       ],
       "tags": ["Cybersecurity", "Industry", "Talk"],
       "image": "/images/events/cybersecurity-month.jpg",
-      "status": "completed"
+      "gallery": [],
+      "status": "completed",
+      "impact": ["industry partnership", "logistics", "promotion"]
     },
     {
       "id": "women-in-stem-8m-2025",
@@ -66,26 +102,44 @@
       "type": "panel",
       "date": "Mar 2025",
       "location": "Keiser University",
-      "attendees": 90,
       "description": "Panel highlighting the experiences of women students in STEM fields.",
+      "purpose": "To celebrate and amplify the voices of women in STEM, providing role models and fostering discussion on representation.",
+      "organization": ["Keiser Software Club", "Student Government Association"],
+      "myContributions": [
+        "Curated and invited panel of 4 outstanding female students",
+        "Developed discussion questions and panel structure",
+        "Moderated live panel discussion",
+        "Handled event promotion and logistics"
+      ],
+      "skills": ["Panel Moderation", "Event Curation", "DEI Initiatives", "Public Speaking"],
       "highlights": [
         "Featured 4 outstanding female students",
         "Focused on representation and career growth",
-        "Part of International Women’s Day activities"
+        "Part of International Women's Day activities"
       ],
       "tags": ["Panel", "Women in Tech", "Leadership"],
       "image": "/images/events/women-stem-2025.jpg",
-      "status": "completed"
+      "gallery": [],
+      "status": "completed",
+      "impact": ["panel curation", "moderation", "DEI"]
     },
     {
       "id": "ai-forum-policy-club",
       "name": "AI & Society Forum",
       "role": "Co-Organizer",
-      "type": "forum",
+      "type": "panel",
       "date": "Spring 2025",
       "location": "Keiser University",
-      "attendees": 100,
       "description": "Interdisciplinary forum on Artificial Intelligence in collaboration with the Policy Club.",
+      "purpose": "To explore the societal implications of AI through cross-disciplinary dialogue between tech and policy students.",
+      "organization": ["Keiser Software Club", "Policy Club"],
+      "myContributions": [
+        "Co-designed forum format with Policy Club leadership",
+        "Recruited technical speakers and panelists",
+        "Managed AV and streaming setup",
+        "Facilitated audience Q&A"
+      ],
+      "skills": ["Cross-Club Collaboration", "Forum Design", "Technical Coordination", "Facilitation"],
       "highlights": [
         "Over 100 attendees",
         "Cross-club collaboration",
@@ -93,21 +147,9 @@
       ],
       "tags": ["AI", "Forum", "Interdisciplinary"],
       "image": "/images/events/ai-forum.jpg",
-      "status": "completed"
-    }
-  ],
-  "stats": [
-    { "value": "300+", "label": "people reached" },
-    { "value": "20+", "label": "events & initiatives" },
-    { "value": "2", "label": "Outstanding Club awards" },
-    { "value": "3", "label": "academic years of leadership" }
-  ],
-  "communities": [
-    {
-      "name": "Keiser Software Club",
-      "role": "Executive Board Member",
-      "period": "2024 – 2025",
-      "link": "#"
+      "gallery": [],
+      "status": "completed",
+      "impact": ["cross-club collab", "technical setup", "facilitation"]
     }
   ]
 }

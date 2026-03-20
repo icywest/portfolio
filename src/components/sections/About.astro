@@ -12,6 +12,18 @@ const getCategoryIcon = (category: string) => {
   };
   return icons[category] || "lucide:terminal";
 };
+
+const infoJson = JSON.stringify(
+  {
+    name: about.name,
+    role: about.role,
+    location: about.location,
+    dob: about.dob,
+    techCount: about.tech.length,
+  },
+  null,
+  2
+);
 ---
 
 <section id="about" class="abt">
@@ -74,15 +86,6 @@ const getCategoryIcon = (category: string) => {
                 ))}
               </div>
             </div>
-
-            <!-- CTA -->
-            <div class="abt__cta">
-              <a href={about.cta.href} class="abt__cta-btn">
-                <span class="abt__cta-prompt">$</span>
-                <span>cd {about.cta.href}</span>
-                <span class="abt__cta-comment">// {about.cta.text}</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -121,12 +124,7 @@ const getCategoryIcon = (category: string) => {
             </div>
           </div>
           <div class="abt__info-body">
-            <pre class="abt__json"><code>{`{`}
-    <span class="json-key">"name"</span>: <span class="json-string">"{about.name}"</span>,
-    <span class="json-key">"certified:"</span>: <span class="json-string">"{about.role}"</span>,
-    <span class="json-key">"location"</span>: <span class="json-string">"{about.location}"</span>,
-    <span class="json-key">"DOB (v1):"</span>: <span class="json-string">"{about.dob}"</span>
-    {`}`}</code></pre>
+            <pre class="abt__json"><code>{infoJson}</code></pre>
           </div>
         </div>
       </aside>

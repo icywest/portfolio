@@ -1,10 +1,26 @@
 [
   {
+    "key": "cybersecurity-eset",
+    "title": "Cybersecurity Implementation Solution Specialist",
+    "subtitle": "Planning, Implementation, Documentation & Security Operations",
+    "org": "ESET",
+    "period": "Mar 2026 – Present",
+    "cmd": "deploy --security --endpoint --threat-detection",
+    "bullets": [
+      "Plan and implement cybersecurity solutions in enterprise environments, ensuring secure deployment of endpoint protection and threat detection systems.",
+      "Configure, document, and optimize security implementations aligned with organizational requirements and risk mitigation strategies.",
+      "Assist in the evaluation and deployment of security architectures, supporting decision-making through technical analysis and research.",
+      "Collaborate with internal teams and clients to strengthen security posture, ensure compliance, and maintain operational security standards.",
+      "Document configurations, procedures, and implementation processes to ensure consistency, scalability, and knowledge transfer."
+    ],
+    "skills": ["Cybersecurity", "Security Implementation", "Documentation", "Threat Detection", "Enterprise Security"]
+  },
+  {
     "key": "program-leader",
-    "title": "Program Leader",
+    "title": "Program Representative",
     "subtitle": "Software Engineering & MIS",
     "org": "Keiser University",
-    "period": "Jan 2025 – Apr 2025",
+    "period": "Jan 2025 – Dec 2025",
     "cmd": "sudo lead --department=SE",
     "bullets": [
       "Coordinated and executed academic, technological, and community-focused events, including workshops, talks, and extracurricular activities.",
@@ -15,6 +31,22 @@
     "skills": ["Leadership", "Project Coordination", "Academic Mentorship"]
   },
   {
+    "key": "web-dev-wstc",
+    "title": "Web Developer & UI/UX Designer",
+    "subtitle": "Writing Studio & Tutoring Center",
+    "org": "Keiser University LAC",
+    "period": "Jan 2025 – Sep 2025",
+    "cmd": "npm run build && deploy --app",
+    "bullets": [
+      "Design and develop web, mobile, and desktop applications with role-based access for academic tutoring management.",
+      "Build frontend interfaces using React and Vite, focusing on usability and responsive design.",
+      "Integrate RESTful APIs using Node.js and Express.js for efficient data management.",
+      "Lead project planning, task distribution, financial management, and technical documentation.",
+      "Create UML diagrams to model system architecture and ensure scalable design."
+    ],
+    "skills": ["React", "Node.js", "UI/UX", "Project Management"]
+  },
+  {
     "key": "peer-tutor",
     "title": "Peer Tutor",
     "subtitle": "Academic Support",
@@ -22,9 +54,9 @@
     "period": "Jan 2024 – Apr 2025",
     "cmd": "tutor --mode=peer --subject=all",
     "bullets": [
-      "Supported fellow students through peer-to-peer education, assisting with coursework, problem-solving, and exam preparation.",
-      "Adapted explanations to different learning styles to improve understanding of technical and academic concepts.",
-      "Encouraged independent learning and confidence in academic performance."
+      "Support fellow students through peer-to-peer education, assisting with coursework, problem-solving, and exam preparation.",
+      "Adapt explanations to different learning styles to improve understanding of technical and academic concepts.",
+      "Encourage independent learning and confidence in academic performance."
     ],
     "skills": ["Peer Education", "Communication", "Mentoring"]
   },
@@ -36,11 +68,26 @@
     "period": "Jun 2024 – Aug 2024",
     "cmd": "az ad user --help | grep sync",
     "bullets": [
-      "Provided technical support for Microsoft Entra ID, managing user access, identity synchronization, and domain-related issues.",
-      "Configured and troubleshot Active Directory and DNS environments affecting authentication services.",
-      "Resolved Outlook email connectivity issues involving IMAP, SMTP, and POP3 protocols."
+      "Provide technical support for Microsoft Entra ID, managing user access, identity synchronization, and domain-related issues.",
+      "Configure and troubleshoot Active Directory and DNS environments affecting authentication services.",
+      "Resolve Outlook email connectivity issues involving IMAP, SMTP, and POP3 protocols."
     ],
     "skills": ["Microsoft Entra ID", "Active Directory", "Technical Support"]
+  },
+  {
+    "key": "project-assistant",
+    "title": "Project Management Assistant & Program Assistant",
+    "subtitle": "AI & Academic Operations",
+    "org": "Keiser University LAC",
+    "period": "Sep 2025 – Dec 2025",
+    "cmd": "manage --projects --ai-initiatives",
+    "bullets": [
+      "Support the Software Engineering & MIS Program Director in academic management and project coordination.",
+      "Prepare technical and administrative documentation, including reports, meeting minutes, and executive summaries.",
+      "Coordinate and monitor institutional AI projects and initiatives.",
+      "Design and deliver an introductory Machine Learning course with robotics demonstrations using AutoAuto Cars."
+    ],
+    "skills": ["Project Management", "Documentation", "AI Education"]
   },
   {
     "key": "academic-assistant",
@@ -50,24 +97,10 @@
     "period": "Jan 2022 – May 2022",
     "cmd": "cat reports/*.pdf | summarize",
     "bullets": [
-      "Assisted the Academic Dean with administrative and academic coordination tasks.",
-      "Prepared reports, documentation, and summaries to support decision-making processes.",
-      "Supported communication between academic departments and administrative offices."
+      "Assist the Academic Dean with administrative and academic coordination tasks.",
+      "Prepare reports, documentation, and summaries to support decision-making processes.",
+      "Support communication between academic departments and administrative offices."
     ],
     "skills": ["Academic Administration", "Documentation", "Coordination"]
-  },
-  {
-    "key": "customer-service",
-    "title": "Customer Service & BI Support",
-    "subtitle": "Data & Support",
-    "org": "Multiple Roles",
-    "period": "Aug 2022 – Apr 2025",
-    "cmd": "powerbi --export dashboard.pbix",
-    "bullets": [
-      "Delivered customer-facing technical and service support in presencial environments.",
-      "Worked with data tools such as Microsoft Power BI and PHP to support reporting and operational needs.",
-      "Developed strong problem-solving and communication skills in high-demand service contexts."
-    ],
-    "skills": ["Customer Support", "Power BI", "Problem Solving"]
   }
 ]

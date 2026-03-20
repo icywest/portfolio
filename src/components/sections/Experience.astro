@@ -2,11 +2,13 @@
 import experience from "../../data/experience.json";
 import { Icon } from "astro-icon/components";
 
-const getStatusColor = (period: string) => {
-  if (period.includes("2025")) return "active";
-  if (period.includes("2024")) return "recent";
+const currentRoleKey = "cybersecurity-eset";
+
+const statuses = experience.map((role, index) => {
+  if (role.key === currentRoleKey) return "current";
+  if (index > 0 && index <= 2) return "recent";
   return "past";
-};
+});
 ---
 
 <section id="experience" class="exp">
@@ -21,7 +23,7 @@ const getStatusColor = (period: string) => {
     </header>
 
     <!-- Terminal Window -->
-    <div class="exp__terminal" x-data="{ active: 'program-leader' }">
+    <div class="exp__terminal" x-data="{ active: 'cybersecurity-eset' }">
       
       <!-- Sidebar Navigation -->
       <aside class="exp__sidebar">
@@ -58,7 +60,7 @@ const getStatusColor = (period: string) => {
         </div>
 
         <div class="exp__panels">
-          {experience.map((role) => (
+          {experience.map((role, index) => (
             <article
               class="exp__panel"
               x-show={`active === '${role.key}'`}
@@ -89,9 +91,9 @@ const getStatusColor = (period: string) => {
                   {role.period}
                 </span>
                 <span class="exp__meta-divider">│</span>
-                <span class={`exp__status exp__status--${getStatusColor(role.period)}`}>
+                <span class={`exp__status exp__status--${statuses[index]}`}>
                   <span class="exp__status-dot"></span>
-                  {getStatusColor(role.period)}
+                  {statuses[index]}
                 </span>
               </div>
 

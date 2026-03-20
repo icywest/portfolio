@@ -4,22 +4,20 @@
   "location": "Managua, Nicaragua",
   "imgSrc": "src/assets/images/icyphoto.png",
   "bio": [
-    "I'm a <em>Software Engineering</em> graduate based in <strong>Managua, Nicaragua</strong>, currently focused on building practical systems that combine software development, cloud infrastructure, and data-driven decisions.",
-    "I care about clean architecture, documentation, and building software that actually gets used. Also, I had worked as a guest speaker and event planner for tech communities."
+    "I'm a <em>Software Engineer</em> based in <strong>Managua, Nicaragua</strong>, currently working in <strong>cybersecurity</strong>, where I plan, implement, and protect organizations, and then go build full-stack apps for fun anyway.",
+    "I love building things, documenting everything, and securing what matters :)"
   ],
   "tech": [
     { "name": "Python", "category": "lang" },
     { "name": "JavaScript", "category": "lang" },
     { "name": "Java", "category": "lang" },
     { "name": "React", "category": "frontend" },
+    { "name": "Astro", "category": "frontend" },
     { "name": "Node.js / Express", "category": "backend" },
-    { "name": "SQL Server", "category": "data" },
-    { "name": "Power BI", "category": "data" },
-    { "name": "TensorFlow", "category": "ml" }
+    { "name": "MySQL, SQL Server", "category": "data" },
+    { "name": "AWS", "category": "cloud" },
+    { "name": "Git / GitHub", "category": "tools" },
+    { "name": "React Native (Expo)", "category": "frontend" }
   ],
-  "dob": "16-06-2005",
-  "cta": {
-    "text": "check out some events I've organized",
-    "href": "/leadership"
-  }
+  "dob": "16-06-2005"
 }

@@ -19,7 +19,7 @@
     "name": "SoftwareHub",
     "tagline": "Mobile app for our Software Club — events, real-time chat, media sharing, works offline too.",
     "href": "https://github.com/icywest/softwarehub.git",
-    "image": "/images/softwarehub.png",
+    "image": "public/images/projects/software_hub.png",
     "stack": ["Expo GO", "Node.js", "MongoDB", "Socket.IO"],
     "accent": "teal"
   },
@@ -27,7 +27,7 @@
     "name": "eventDSL",
     "tagline": "Built a custom domain-specific language in Python with textX, plus web tooling to go with it.",
     "href": "https://github.com/icywest/eventDSL.git",
-    "image": "/images/eventdsl.png",
+    "image": "public/images/projects/event_dsl.png",
     "stack": ["Python", "textX", "JavaScript", "CSS", "HTML"],
     "accent": "amber"
   },
