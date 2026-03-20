@@ -1,6 +1,7 @@
 ---
 import about from "../../data/about.json";
 import { Icon } from "astro-icon/components";
+import profilePhoto from "../../assets/images/icyphoto.png";
 
 const getCategoryIcon = (category: string) => {
   const icons: Record<string, string> = {
@@ -106,7 +107,11 @@ const infoJson = JSON.stringify(
             </div>
           </div>
           <div class="abt__photo-body">
-            <img src={about.imgSrc} alt={`Portrait of ${about.name}`} loading="lazy" />
+            <img
+              src={profilePhoto.src}
+              alt={`Portrait of ${about.name}`}
+              loading="lazy"
+            />
           </div>
         </div>
 

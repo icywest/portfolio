@@ -1,6 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import nav from "../data/navigation.json";
+import logo from "../assets/images/icylogo.svg";
+
+const homeHref = import.meta.env.BASE_URL;
 ---
 
 <header class="nav">
@@ -10,8 +13,8 @@ import nav from "../data/navigation.json";
     <div class="nav__left">
       
       <!-- Logo/Brand -->
-      <a href="/" class="nav__brand">
-        <img src={nav.brand.logo} alt={nav.brand.name} class="nav__logo" />
+      <a href={homeHref} class="nav__brand">
+        <img src={logo.src} alt={nav.brand.name} class="nav__logo" />
         <span class="nav__name">
           <span class="nav__prompt">~</span>/{nav.brand.name}
         </span>
@@ -23,7 +26,9 @@ import nav from "../data/navigation.json";
       <!-- Navigation Links -->
       <nav class="nav__links">
         {nav.links.map((link) => {
-          const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+          const href = link.href.startsWith("#")
+            ? `${import.meta.env.BASE_URL}${link.href}`
+            : link.href;
 
           return (
             <a href={href} class="nav__link">
@@ -77,7 +82,9 @@ import nav from "../data/navigation.json";
   <div class="nav__mobile" id="nav-mobile">
     <div class="nav__mobile-inner">
       {nav.links.map((link, i) => {
-        const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+        const href = link.href.startsWith("#")
+          ? `${import.meta.env.BASE_URL}${link.href}`
+          : link.href;
 
         return (
           <a href={href} class="nav__mobile-link">
@@ -104,20 +111,31 @@ import nav from "../data/navigation.json";
   </div>
 </header>
 
-<script>
-  const toggle = document.getElementById('nav-toggle');
-  const mobile = document.getElementById('nav-mobile');
-  
-  toggle?.addEventListener('click', () => {
-    mobile?.classList.toggle('nav__mobile--open');
-    toggle.classList.toggle('nav__toggle--active');
-  });
+<script is:inline>
+  const initNavbar = () => {
+    const toggle = document.getElementById("nav-toggle");
+    const mobile = document.getElementById("nav-mobile");
 
-  // Close on link click
-  document.querySelectorAll('.nav__mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobile?.classList.remove('nav__mobile--open');
-      toggle?.classList.remove('nav__toggle--active');
+    if (!(toggle instanceof HTMLButtonElement) || !(mobile instanceof HTMLElement)) {
+      return;
+    }
+
+    toggle.addEventListener("click", () => {
+      mobile.classList.toggle("nav__mobile--open");
+      toggle.classList.toggle("nav__toggle--active");
     });
-  });
+
+    document.querySelectorAll(".nav__mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobile.classList.remove("nav__mobile--open");
+        toggle.classList.remove("nav__toggle--active");
+      });
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNavbar, { once: true });
+  } else {
+    initNavbar();
+  }
 </script>

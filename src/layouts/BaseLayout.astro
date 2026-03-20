@@ -1,8 +1,11 @@
 ---
+import "../styles/global.css";
+import favicon from "../assets/images/favicon.svg";
+
 const {
   title = "Cynthia West Portfolio",
   description = "Portfolio 2026",
-} = Astro.props
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -11,11 +14,10 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="stylesheet" href="/src/styles/global.css" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/images/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <title>{title}</title>
   </head>
-  
+  <body>
     <div class="relative z-10">
       <slot />
     </div>

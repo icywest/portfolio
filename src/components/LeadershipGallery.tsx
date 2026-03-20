@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { withBase } from "../utils/withBase";
+
+const placeholderEventImage = withBase("/images/placeholder-event.jpg");
 
 interface Event {
   id: string;
@@ -256,12 +259,11 @@ export default function LeadershipGallery({ events, types, allTags }: Props) {
             {/* Cover Image */}
             <div className="gallery__card-image">
               <img
-                src={event.image}
+                src={withBase(event.image)}
                 alt={event.name}
                 loading="lazy"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    "/images/placeholder-event.jpg";
+                  (e.target as HTMLImageElement).src = placeholderEventImage;
                 }}
               />
               <div className="gallery__card-overlay">
@@ -379,14 +381,13 @@ export default function LeadershipGallery({ events, types, allTags }: Props) {
                 <img
                   src={
                     selectedEvent.gallery && selectedEvent.gallery.length > 0
-                      ? selectedEvent.gallery[galleryIndex]
-                      : selectedEvent.image
+                      ? withBase(selectedEvent.gallery[galleryIndex])
+                      : withBase(selectedEvent.image)
                   }
                   alt={selectedEvent.name}
                   className="modal__image"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      "/images/placeholder-event.jpg";
+                    (e.target as HTMLImageElement).src = placeholderEventImage;
                   }}
                 />
 
